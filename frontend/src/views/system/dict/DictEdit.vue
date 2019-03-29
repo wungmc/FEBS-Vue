@@ -1,7 +1,7 @@
 <template>
   <a-drawer
     title="修改字典"
-    :maskClosable="false"
+    :maskClosable="true"
     width=650
     placement="right"
     :closable="false"
@@ -39,20 +39,24 @@
       </a-form-item>
     </a-form>
     <div class="drawer-bootom-button">
-      <a-popconfirm title="确定放弃编辑？" @confirm="onClose" okText="确定" cancelText="取消">
+      <!-- <a-popconfirm title="确定放弃编辑？" @confirm="onClose" okText="确定" cancelText="取消">
         <a-button style="margin-right: .8rem">取消</a-button>
-      </a-popconfirm>
+      </a-popconfirm> -->
+      <cancel-button @close="onClose" />
       <a-button @click="handleSubmit" type="primary" :loading="loading">提交</a-button>
     </div>
   </a-drawer>
 </template>
 <script>
+import CancelButton from '@/components/CancelButton.vue'
+
 const formItemLayout = {
   labelCol: { span: 3 },
   wrapperCol: { span: 18 }
 }
 export default {
   name: 'DictEdit',
+  components: {CancelButton},
   props: {
     dictEditVisiable: {
       default: false

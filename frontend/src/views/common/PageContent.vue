@@ -2,7 +2,7 @@
   <div class="page-content">
     <div :class="['page-header-wide', layout]">
       <div class="breadcrumb">
-        <a-breadcrumb>
+        <a-breadcrumb separator="/">
           <a-breadcrumb-item :key="item.path" v-for="(item, index) in breadcrumb">
             <span v-if="index === 0"><router-link to="/">{{item.name}}</router-link></span>
             <span v-else>{{item.name}}</span>
