@@ -21,7 +21,7 @@ spring:
           username: root
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
-          url: jdbc:mysql://127.0.0.1:3306/febs_shiro_jwt?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+          url: jdbc:mysql://127.0.0.1:3306/febs?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
         # 数据源-2，名称为 test
 #        test:
 #          username: root
@@ -34,14 +34,19 @@ spring:
   messages:
     encoding: utf-8
 
+  resources:
+    add-mappings: true
+#    static-path-pattern: /**
+#    static-locations: classpath:/static/
+
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
 
   redis:
-    host: 127.0.0.1
+    host: 192.168.16.250
     port: 6379
-    password: 
+    password: admin
     jedis:
       pool:
         min-idle: 8
@@ -78,6 +83,7 @@ febs:
         num: 1000
   shiro:
     # 后端免认证接口 url
-    anonUrl: /login,/logout/**,/regist,/user/check/**
+    anonUrl: /login,/logout/**,/regist,/user/check/**,/,/index,/static/**
     # token有效期，单位秒
     jwtTimeOut: 3600
+

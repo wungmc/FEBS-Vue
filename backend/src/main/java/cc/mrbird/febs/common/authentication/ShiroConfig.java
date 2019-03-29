@@ -30,6 +30,13 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setFilters(filters);
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
+		filterChainDefinitionMap.put("/css/**", "anon");
+		filterChainDefinitionMap.put("/images/**", "anon");
+		filterChainDefinitionMap.put("/js/**", "anon");
+		filterChainDefinitionMap.put("/img/**", "anon");
+		filterChainDefinitionMap.put("/avatar/**", "anon");
+		filterChainDefinitionMap.put("/less/**", "anon");
+		filterChainDefinitionMap.put("/file/**", "anon");
         // 所有请求都要经过 jwt过滤器
         filterChainDefinitionMap.put("/**", "jwt");
 
