@@ -609,6 +609,10 @@ INSERT INTO `t_menu` VALUES ('135', '3', '密码重置', null, null, 'user:reset
 INSERT INTO `t_menu` VALUES ('136', '10', '导出Excel', null, null, 'log:export', null, '1', null, '2019-01-23 06:37:27', null);
 INSERT INTO `t_menu` VALUES ('137', '102', '导出Excel', null, null, 'job:export', null, '1', null, '2019-01-23 06:37:59', null);
 INSERT INTO `t_menu` VALUES ('138', '109', '导出Excel', null, null, 'jobLog:export', null, '1', null, '2019-01-23 06:38:32', null);
+INSERT INTO `t_menu` VALUES ('139', '1', '书籍管理', '/system/dict', 'system/book/Book', 'dict:view', '', '0', 6, '2019-03-26 06:52:11', '2019-03-26 06:52:37');
+INSERT VALUES (140, 139, '新增书籍', null, null, 'book:add', null, '1', null, '2019-03-26 08:37:28', null);
+INSERT VALUES (141, 139, '修改书籍', null, null, 'book:update', null, '1', null, '2019-03-26 08:37:49', null);
+INSERT VALUES (142, 139, '删除书籍', null, null, 'book:delete', null, '1', null, '2019-03-26 08:38:05', null);
 
 -- ----------------------------
 -- Table structure for t_role
@@ -768,6 +772,10 @@ INSERT INTO `t_role_menu` VALUES ('2', '103');
 INSERT INTO `t_role_menu` VALUES ('2', '137');
 INSERT INTO `t_role_menu` VALUES ('2', '138');
 INSERT INTO `t_role_menu` VALUES ('2', '131');
+INSERT INTO t_role_menu VALUES (1, 139);
+INSERT INTO t_role_menu VALUES (1, 140);
+INSERT INTO t_role_menu VALUES (1, 141);
+INSERT INTO t_role_menu VALUES (1, 142);
 
 -- ----------------------------
 -- Table structure for t_test
